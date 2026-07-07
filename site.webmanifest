@@ -1,0 +1,15 @@
+{
+  "name": "Banking Architecture Reference Platforms",
+  "short_name": "Banking Ref",
+  "description": "Three service-domain banking platforms as runnable reference code — BIAN, Islamic banking, and UK Open Banking.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f1729",
+  "theme_color": "#0f1729",
+  "icons": [
+    { "src": "/assets/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/assets/favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Banking Architecture Reference Platforms — Sreenivas Sadhu Prabhakara</title>
+<meta name="description" content="Three open-source, service-domain banking platforms as runnable reference code: a 162-domain BIAN core-banking landscape, a 48-domain Shariah-native Islamic banking platform, and openbank-bian (UK Open Banking / OBIE in Go)."/>
+<meta name="keywords" content="BIAN, banking service domains, core banking architecture, Islamic banking, Shariah-compliant banking, Open Banking, OBIE, banking microservices, Spring Boot, Go, Kubernetes, Cilium, reference architecture, Sreenivas Sadhu Prabhakara"/>
+<meta name="author" content="Sreenivas Sadhu Prabhakara"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+<meta name="theme-color" content="#0f1729"/>
+<link rel="canonical" href="https://sreenivas-sadhu-prabhakara.github.io/"/>
+<meta property="og:site_name" content="Banking Architecture Reference Platforms"/>
+<meta property="og:title" content="Banking Architecture Reference Platforms"/>
+<meta property="og:description" content="Three service-domain banking platforms as runnable reference code — BIAN (162 domains), Islamic banking (48), and UK Open Banking (5)."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://sreenivas-sadhu-prabhakara.github.io/"/>
+<meta property="og:locale" content="en"/>
+<meta property="og:image" content="https://sreenivas-sadhu-prabhakara.github.io/assets/og/hub.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Banking architecture, in runnable reference code — BIAN, Islamic banking, Open Banking."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Banking Architecture Reference Platforms"/>
+<meta name="twitter:description" content="BIAN (162), Islamic banking (48) and UK Open Banking (5) service domains as runnable, deployable microservices."/>
+<meta name="twitter:image" content="https://sreenivas-sadhu-prabhakara.github.io/assets/og/hub.png"/>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://sreenivas-sadhu-prabhakara.github.io/#website",
+      "url": "https://sreenivas-sadhu-prabhakara.github.io/",
+      "name": "Banking Architecture Reference Platforms",
+      "description": "Three open-source service-domain banking platforms as runnable reference code.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://sreenivas-sadhu-prabhakara.github.io/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://sreenivas-sadhu-prabhakara.github.io/#person",
+      "name": "Sreenivas Sadhu Prabhakara",
+      "url": "https://sreenivas-sadhu-prabhakara.github.io/",
+      "sameAs": ["https://github.com/Sreenivas-Sadhu-Prabhakara"],
+      "knowsAbout": ["BIAN", "Core banking architecture", "Islamic finance", "Open Banking", "Microservices"]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Banking reference platforms",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "BIAN Platform — 162 service domains", "url": "https://sreenivas-sadhu-prabhakara.github.io/bian-platform/" },
+        { "@type": "ListItem", "position": 2, "name": "Islamic Banking Platform — 48 Shariah-native domains", "url": "https://sreenivas-sadhu-prabhakara.github.io/islamic-banking-platform/" },
+        { "@type": "ListItem", "position": 3, "name": "openbank-bian — UK Open Banking in Go", "url": "https://sreenivas-sadhu-prabhakara.github.io/openbank-bian/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#0f1729;--bg2:#131c33;--panel:#182238;--line:#2a3654;--ink:#eef2fb;--dim:#a7b6d6;--faint:#61729a;--a1:#7c9cf0;--a2:#9f7cf0;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;--maxw:1000px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;background-image:radial-gradient(120% 60% at 50% -8%,#1a2540 0%,#0f1729 55%)}
+a{color:var(--a1);text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1rem,4vw,2rem)}
+.top{display:flex;align-items:center;justify-content:space-between;padding:1rem clamp(1rem,4vw,2rem);border-bottom:1px solid var(--line)}
+.brand{font-family:var(--mono);font-size:.9rem;color:var(--ink);letter-spacing:.02em}
+.top a.gh{font-family:var(--mono);font-size:.76rem;color:var(--dim);border:1px solid var(--line);border-radius:7px;padding:.35rem .8rem}
+.hero{text-align:center;padding:clamp(3rem,8vw,5.5rem) 1rem 2rem;max-width:900px;margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.2em;color:var(--a1);text-transform:uppercase}
+h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-1.5px;line-height:1.05;margin:1rem 0 .4rem}
+h1 .g{background:linear-gradient(100deg,var(--a1),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--dim);font-size:clamp(1.05rem,2.3vw,1.25rem);max-width:60ch;margin:1.1rem auto 0}
+.byline{font-family:var(--mono);font-size:.8rem;color:var(--faint);margin-top:1.4rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;padding:2rem 0 1rem}
+.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.5rem 1.5rem 1.3rem;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--a1);transform:translateY(-3px);text-decoration:none}
+.card .tag{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .5rem;border-radius:5px;margin-bottom:.9rem}
+.card.bian .tag{color:#0c1220;background:#d9a93d}
+.card.islamic .tag{color:#f6f2e7;background:#1c352b;border:1px solid #8d701f}
+.card.ob .tag{color:#fff;background:#0071e3}
+.card h2{font-size:1.35rem;margin:.2rem 0 .5rem;color:var(--ink);letter-spacing:-.3px}
+.card p{color:var(--dim);font-size:.95rem;margin:0 0 1rem}
+.card .n{font-family:var(--mono);font-size:.78rem;color:var(--faint);display:flex;justify-content:space-between;align-items:center}
+.card .go{color:var(--a1)}
+.about{border-top:1px solid var(--line);margin-top:2rem;padding:2.2rem 0 1rem;color:var(--dim);max-width:70ch}
+.about h3{color:var(--ink);font-size:1.1rem;margin:0 0 .6rem}
+footer{border-top:1px solid var(--line);margin-top:2rem;padding:2rem 0 3rem;color:var(--faint);font-size:.82rem;font-family:var(--mono)}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">◇ sreenivas-sadhu-prabhakara</div>
+  <a class="gh" href="https://github.com/Sreenivas-Sadhu-Prabhakara" target="_blank" rel="noopener">GitHub ↗</a>
+</header>
+
+<main>
+<section class="hero">
+  <p class="eyebrow">Reference Banking Architecture · Open Source</p>
+  <h1>Banking architecture,<br/><span class="g">in runnable reference code.</span></h1>
+  <p class="sub">Three service-domain banking platforms, each decomposing a bank into independent, deployable microservices — one repository per capability, documented and live.</p>
+  <p class="byline">By Sreenivas Sadhu Prabhakara · 215 service-domain microsites</p>
+</section>
+
+<section class="wrap">
+  <div class="grid">
+    <a class="card bian" href="https://sreenivas-sadhu-prabhakara.github.io/bian-platform/">
+      <span class="tag">BIAN · Core Banking</span>
+      <h2>BIAN Platform</h2>
+      <p>The full BIAN service landscape as 162 independent Spring Boot microservices on a Kubernetes Cilium eBPF mesh, with seven deep domains carrying real, tested logic.</p>
+      <div class="n"><span>162 service domains</span><span class="go">Explore →</span></div>
+    </a>
+    <a class="card islamic" href="https://sreenivas-sadhu-prabhakara.github.io/islamic-banking-platform/">
+      <span class="tag">Shariah-native</span>
+      <h2>Islamic Banking Platform</h2>
+      <p>A Shariah-compliant core-banking landscape whose primitives are the Islamic contracts themselves — Murabaha, Mudarabah, Ijara, Sukuk, Takaful, Zakat — fully isolated from conventional banking.</p>
+      <div class="n"><span>48 service domains</span><span class="go">Explore →</span></div>
+    </a>
+    <a class="card ob" href="https://sreenivas-sadhu-prabhakara.github.io/openbank-bian/">
+      <span class="tag">UK Open Banking · Go</span>
+      <h2>openbank-bian</h2>
+      <p>UK Open Banking (OBIE) rebuilt as five consent-first BIAN microservices in Go — Consent, Accounts (AISP), Payments (PISP), Funds (CBPII) and Party. Clone one and run it in seconds.</p>
+      <div class="n"><span>5 microservices</span><span class="go">Explore →</span></div>
+    </a>
+  </div>
+
+  <div class="about">
+    <h3>About these platforms</h3>
+    <p>Each platform is an educational reference implementation that models a modern bank as a landscape of BIAN-style <em>service domains</em> — independently owned, built, tested and deployed. Every constituent service has its own repository and its own live documentation site. They are learning artifacts, not production banking software, and are not affiliated with or certified by BIAN, OBIE / Open Banking Limited, or any Shariah authority.</p>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  ◇ sreenivas-sadhu-prabhakara.github.io · BIAN · Islamic banking · Open Banking · reference architecture
+</footer>
+</body>
+</html>
